@@ -13,20 +13,7 @@
     </div>
   </div>
   <div class="col-12 col-lg-4">
-    <div class="card">
-      <div class="card-body">
-        <strong>Address:</strong><br/>
-        Street: {{user.address.street}}<br />
-        Suite: {{user.address.suite}}<br />
-        City: {{user.address.city}}<br />
-        Zipcode: {{user.address.zipcode}}<br />
-        Geo: {{user.address.geo | json}}
-        <hr/>
-        <strong>Geo:</strong><br/>
-        Lat: {{user.address.geo.lat}}<br/>
-        Lng: {{user.address.geo.lng}}
-      </div>
-    </div>
+    <app-address [address]="user.address"></app-address>
   </div>
   <div class="col-12 col-lg-4">
     <div class="card">
