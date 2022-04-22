@@ -14,6 +14,7 @@ export class UserComponent implements OnInit {
 
   public id: string;
   public result: string;
+  public currentUser: User;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -26,6 +27,7 @@ export class UserComponent implements OnInit {
         this.id = params['id'];
         this.user.getUser(this.id).subscribe(user => {
           this.result = JSON.stringify(user);
+          this.currentUser = user;
         });
       }
     });

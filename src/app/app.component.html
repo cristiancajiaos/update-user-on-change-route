@@ -1,6 +1,20 @@
 <div class="container my-2">
   <p>user/:id</p>
 
+  <div class="btn-group">
+    <a class="btn btn-primary" [routerLink]="['/user', '5']">
+      /user/5
+    </a>
+    <a class="btn btn-success" [routerLink]="['/user', '7']">
+      /user/7
+    </a>
+    <a class="btn btn-danger" [routerLink]="['/user', '10']">
+      /user/10
+    </a>
+  </div>
+
+  <hr/>
+
   <router-outlet></router-outlet>
 </div>
 

@@ -3,13 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
 import { UserComponent } from './user.component';
-import { FooComponent } from './foo/foo.component';
-
+import { UserContentComponent } from './user-content/user-content.component';
 
 @NgModule({
   declarations: [
     UserComponent,
-    FooComponent
+    UserContentComponent,
   ],
   imports: [
     CommonModule,
