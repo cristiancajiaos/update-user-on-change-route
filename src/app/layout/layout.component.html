@@ -1,16 +1,31 @@
 <div class="container my-2">
   <p>user/:id</p>
 
-  <div class="btn-group">
-    <a class="btn btn-primary" [routerLink]="['/user', '5']">
-      /user/5
-    </a>
-    <a class="btn btn-success" [routerLink]="['/user', '7']">
-      /user/7
-    </a>
-    <a class="btn btn-danger" [routerLink]="['/user', '10']">
-      /user/10
-    </a>
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <form class="mb-2" [formGroup]="idForm" (ngSubmit)="onSubmit()">
+        <div class="input-group">
+          <span class="input-group-text">ID</span>
+          <input type="number" class="form-control" placeholder="ID (1 to 10)" formControlName="number" />
+          <button class="btn btn-secondary">
+            Go To ID
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="col-12 col-lg-6">
+      <div class="btn-group">
+        <a class="btn btn-primary" [routerLink]="['/user', '5']">
+          /user/5
+        </a>
+        <a class="btn btn-success" [routerLink]="['/user', '7']">
+          /user/7
+        </a>
+        <a class="btn btn-danger" [routerLink]="['/user', '10']">
+          /user/10
+        </a>
+      </div>
+    </div>
   </div>
 
   <hr />
