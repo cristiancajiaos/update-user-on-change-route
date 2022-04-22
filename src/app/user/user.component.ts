@@ -1,3 +1,4 @@
+import { UserService } from './user.service';
 import { User } from './../shared/interfaces/user';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
@@ -12,21 +13,20 @@ export class UserComponent implements OnInit {
 
 
   public id: string;
+  public result: string;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private http: HttpClient
+    private user: UserService
   ) { }
 
   ngOnInit(): void {
     this.activatedRoute.params?.subscribe(params => {
       if (params) {
         this.id = params['id'];
-        this.http
-          .get<User>(`/users/${this.id}`)
-          .subscribe((user) => {
-            console.log(user);
-          });
+        this.user.getUser(this.id).subscribe(user => {
+          this.result = JSON.stringify(user);
+        });
       }
     });
 
