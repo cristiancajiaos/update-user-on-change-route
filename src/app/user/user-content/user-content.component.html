@@ -1,1 +1,41 @@
-<p>{{user | json}}</p>
+<div class="row justify-lg-align-center">
+  <div class="col-12 col-lg-4">
+    <div class="card">
+      <div class="card-body">
+        <strong>General Info:</strong><br/>
+         ID: {{user.id}}<br />
+         Name: {{user.name}}<br />
+         Username: {{user.username}}<br/>
+         Email: {{user.email}}<br/>
+         Phone: {{user.phone}}<br/>
+         Website: {{user.website}}
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-4">
+    <div class="card">
+      <div class="card-body">
+        <strong>Address:</strong><br/>
+        Street: {{user.address.street}}<br />
+        Suite: {{user.address.suite}}<br />
+        City: {{user.address.city}}<br />
+        Zipcode: {{user.address.zipcode}}<br />
+        Geo: {{user.address.geo | json}}
+        <hr/>
+        <strong>Geo:</strong><br/>
+        Lat: {{user.address.geo.lat}}<br/>
+        Lng: {{user.address.geo.lng}}
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-4">
+    <div class="card">
+      <div class="card-body">
+        <strong>Company:</strong><br />
+        Name: {{user.company.name}}<br />
+        Catchphrase: {{user.company.catchPhrase}}<br />
+        BS: {{user.company.bs}}<br />
+      </div>
+    </div>
+  </div>
+</div>
