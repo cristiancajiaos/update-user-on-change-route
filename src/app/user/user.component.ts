@@ -11,6 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 export class UserComponent implements OnInit {
 
 
+  public id: string;
+
   constructor(
     private activatedRoute: ActivatedRoute,
     private http: HttpClient
@@ -19,13 +21,16 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.params?.subscribe(params => {
       if (params) {
-        console.log(params);
+        this.id = params['id'];
+        this.http
+          .get<User>(`/users/${this.id}`)
+          .subscribe((user) => {
+            console.log(user);
+          });
       }
     });
 
-    this.http.get<User>(`http://jsonplaceholder.typicode.com/users/1`).subscribe(user => {
-      console.log(user);
-    });
+
   }
 
 }
